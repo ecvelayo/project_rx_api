@@ -248,9 +248,10 @@ class ProductController extends APIController
           ->where('T2.deleted_at', '=', null)
           ->where('T1.deleted_at', '=', null)
           ->where('T2.code', '=', $code)
-          ->distinct("T1.id")
+          // ->distinct("T1.id")
           ->whereNotNull('T2.merchant_id')
           ->get(["T1.id", "T1.code","T1.account_id", "T1.name", "T1.prefix", "T1.logo", "T2.code AS location_code", "T2.latitude","T2.longitude","T2.route","T2.locality"]);
+        return $result;
         $result = json_decode($result, true);
         for($i = 0; $i < count($result); $i++){
           $result[$i]["distance"] = $this->LongLatDistance($request["latitude"],$request["longitude"],$result[$i]["latitude"], $result[$i]["longitude"]);

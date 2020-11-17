@@ -54,6 +54,7 @@ class APIController extends Controller
     'com.runwayexpress',
     'com.runwayexpressriders',
     'com.runwayexpress.runway-express-riders',
+    'com.runwayexpress.runway-express-partners',
     'com.runwayexpress.runway-express',
     'http://localhost:8001'
   );
